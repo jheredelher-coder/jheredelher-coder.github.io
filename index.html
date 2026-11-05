@@ -1,97 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JHEREMYAS</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b1020;
-      color: #f5f7ff;
-    }
-    header {
-      padding: 22px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #111a31;
-      border-bottom: 1px solid #293654;
-    }
-    .logo { font-size: 1.35rem; font-weight: 800; letter-spacing: 2px; }
-    nav a { color: #cbd5e1; text-decoration: none; margin-left: 18px; }
-    .hero {
-      min-height: 65vh;
-      padding: 90px 8%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: radial-gradient(circle at top right, #273c78, transparent 45%);
-    }
-    .tag { color: #8fb4ff; font-weight: bold; letter-spacing: 3px; }
-    h1 { font-size: clamp(2.8rem, 8vw, 5.5rem); margin: 15px 0; }
-    .hero p { max-width: 620px; color: #cbd5e1; font-size: 1.15rem; line-height: 1.7; }
-    .button {
-      display: inline-block; width: fit-content; margin-top: 20px;
-      padding: 13px 22px; border-radius: 10px;
-      background: #5b8cff; color: white; text-decoration: none; font-weight: bold;
-    }
-    section { padding: 55px 8%; }
-    h2 { font-size: 2rem; margin-top: 0; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
-    .card { background: #151f38; border: 1px solid #293654; padding: 22px; border-radius: 15px; }
-    .card p { color: #cbd5e1; line-height: 1.6; }
-    footer { padding: 25px 8%; text-align: center; color: #9aa8c2; border-top: 1px solid #293654; }
-    @media (max-width: 560px) {
-      header { align-items: flex-start; gap: 12px; flex-direction: column; }
-      nav a { margin: 0 12px 0 0; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JHEREMYAS</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#0b1020;color:#f5f7ff}
+header{padding:22px 8%;display:flex;justify-content:space-between;align-items:center;background:#111a31;border-bottom:1px solid #293654}
+.logo{font-size:1.35rem;font-weight:800;letter-spacing:2px}
+nav a{color:#cbd5e1;text-decoration:none;margin-left:18px}
+nav a:hover{color:#8fb4ff}
+.hero{min-height:65vh;padding:90px 8%;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(circle at top right,#273c78,transparent 45%)}
+.tag{color:#8fb4ff;font-weight:bold;letter-spacing:3px}
+h1{font-size:clamp(2.8rem,8vw,5.5rem);margin:15px 0}
+.hero p{max-width:620px;color:#cbd5e1;font-size:1.15rem;line-height:1.7}
+.button{display:inline-block;width:fit-content;margin-top:20px;padding:13px 22px;border-radius:10px;background:#5b8cff;color:white;text-decoration:none;font-weight:bold}
+section{padding:55px 8%}
+h2{font-size:2rem;margin-top:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:#151f38;border:1px solid #293654;padding:22px;border-radius:15px}
+.card p{color:#cbd5e1;line-height:1.6}
+.ai-section{background:#101a30}
+.ai-box{max-width:760px;margin:0 auto;overflow:hidden;border:1px solid #34476e;border-radius:18px;background:#0d1528;box-shadow:0 15px 45px #0005}
+.ai-head{padding:18px 20px;background:#182747;display:flex;align-items:center;gap:12px}
+.ai-icon{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#5b8cff;font-size:21px}
+.ai-head h3{margin:0 0 4px}
+.ai-status{margin:0;color:#a9bad8;font-size:.85rem}
+.chat-messages{height:300px;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:12px}
+.message{max-width:85%;padding:11px 14px;border-radius:14px;line-height:1.45;overflow-wrap:anywhere}
+.bot{align-self:flex-start;background:#1b2945;color:#edf3ff}
+.user{align-self:flex-end;background:#426fd1;color:white}
+.chat-form{display:flex;gap:10px;padding:14px;border-top:1px solid #293654}
+.chat-form input{min-width:0;flex:1;padding:13px;border-radius:10px;border:1px solid #3a4c70;background:#111d34;color:white;outline:none;font-size:1rem}
+.chat-form button{border:0;border-radius:10px;padding:0 18px;background:#5b8cff;color:white;font-weight:bold}
+.notice{max-width:760px;margin:13px auto 0;color:#9eacc6;font-size:.85rem;line-height:1.5}
+footer{padding:25px 8%;text-align:center;color:#9aa8c2;border-top:1px solid #293654}
+@media(max-width:560px){
+header{align-items:flex-start;gap:12px;flex-direction:column}
+nav a{margin:0 12px 0 0}
+.chat-messages{height:280px}
+.chat-form{gap:7px}
+.chat-form button{padding:0 13px}
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="logo">JHEREMYAS</div>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#sobre">Sobre mí</a>
-      <a href="#contenido">Contenido</a>
-    </nav>
-  </header>
+<header>
+<div class="logo">JHEREMYAS</div>
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#sobre">Sobre mí</a>
+<a href="#contenido">Contenido</a>
+<a href="#jheremyas-ai">JHEREMYAS AI</a>
+</nav>
+</header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="tag">BIENVENIDO A MI PÁGINA</div>
-      <h1>Hola, soy Jheremyas.</h1>
-      <p>Este es mi espacio en Internet. Aquí podré compartir mis ideas, imágenes, videos y proyectos.</p>
-      <a class="button" href="#contenido">Explorar</a>
-    </section>
+<main>
+<section class="hero" id="inicio">
+<div class="tag">BIENVENIDO A MI PÁGINA</div>
+<h1>Hola, soy Jheremyas.</h1>
+<p>Este es mi espacio en Internet. Aquí podré compartir mis ideas, imágenes, videos y proyectos.</p>
+<a class="button" href="#contenido">Explorar</a>
+</section>
 
-    <section id="sobre">
-      <h2>Sobre esta página</h2>
-      <p>Esta página está empezando. Poco a poco iré agregando contenido y cambiando el diseño.</p>
-    </section>
+<section id="sobre">
+<h2>Sobre esta página</h2>
+<p>Esta página está empezando. Poco a poco iré agregando contenido y cambiando el diseño.</p>
+</section>
 
-    <section id="contenido">
-      <h2>Mi contenido</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Mis imágenes</h3>
-          <p>Aquí podrás colocar tus fotografías e imágenes favoritas.</p>
-        </article>
-        <article class="card">
-          <h3>Mis videos</h3>
-          <p>Aquí podrás compartir videos y mostrar tus proyectos.</p>
-        </article>
-        <article class="card">
-          <h3>Mis proyectos</h3>
-          <p>Un espacio para presentar las cosas que vayas creando.</p>
-        </article>
-      </div>
-    </section>
-  </main>
+<section id="contenido">
+<h2>Mi contenido</h2>
+<div class="cards">
+<article class="card">
+<h3>Mis imágenes</h3>
+<p>Aquí podrás colocar tus fotografías e imágenes favoritas.</p>
+</article>
+<article class="card">
+<h3>Mis videos</h3>
+<p>Aquí podrás compartir videos y mostrar tus proyectos.</p>
+</article>
+<article class="card">
+<h3>Mis proyectos</h3>
+<p>Un espacio para presentar las cosas que vayas creando.</p>
+</article>
+</div>
+</section>
 
-  <footer>© 2026 JHEREMYAS · Mi página web</footer>
+<section class="ai-section" id="jheremyas-ai">
+<h2>🤖 JHEREMYAS AI</h2>
+<p>¡Hola! Soy el asistente de esta página. Escribe un mensaje para probar el chat.</p>
+
+<div class="ai-box">
+<div class="ai-head">
+<div class="ai-icon">🤖</div>
+<div>
+<h3>JHEREMYAS AI</h3>
+<p class="ai-status">● Chat de prueba activado</p>
+</div>
+</div>
+
+<div class="chat-messages" id="chatMessages" aria-live="polite">
+<div class="message bot">¡Hola! 👋 Soy JHEREMYAS AI. Todavía estoy en mi versión de prueba. ¿En qué puedo ayudarte?</div>
+</div>
+
+<form class="chat-form" id="chatForm">
+<input id="chatInput" type="text" placeholder="Escribe tu mensaje..." autocomplete="off" required>
+<button type="submit">Enviar</button>
+</form>
+</div>
+
+<p class="notice">Esta es la primera versión de prueba: responde con mensajes preparados. Más adelante podremos conectarla a un servicio de IA real mediante una conexión segura.</p>
+</section>
+</main>
+
+<footer>© 2026 JHEREMYAS · Mi página web</footer>
+
+<script>
+const chatForm=document.getElementById("chatForm");
+const chatInput=document.getElementById("chatInput");
+const chatMessages=document.getElementById("chatMessages");
+
+function addMessage(text,type){
+const message=document.createElement("div");
+message.className="message "+type;
+message.textContent=text;
+chatMessages.appendChild(message);
+chatMessages.scrollTop=chatMessages.scrollHeight;
+}
+
+function getReply(text){
+const message=text.toLowerCase();
+
+if(message.includes("hola")||message.includes("buenas")){
+return "¡Holaaa! 😎 ¿Qué te gustaría hacer hoy?";
+}
+if(message.includes("cómo te llamas")||message.includes("como te llamas")){
+return "Me llamo JHEREMYAS AI. 🤖";
+}
+if(message.includes("quién eres")||message.includes("quien eres")){
+return "Soy el asistente de la página JHEREMYAS. Esta es mi versión inicial de prueba.";
+}
+if(message.includes("ayuda")||message.includes("puedes hacer")){
+return "Por ahora puedo probar una conversación sencilla. Pronto podremos conectarme a una IA real.";
+}
+if(message.includes("gracias")){
+return "¡De nada! 😄";
+}
+if(message.includes("adiós")||message.includes("adios")){
+return "¡Hasta pronto! Gracias por visitar JHEREMYAS.";
+}
+return "¡Recibí tu mensaje! Todavía estoy en modo de prueba y aún no puedo comprender cualquier pregunta. Eso lo añadiremos al conectarme a una IA real. 🛠️";
+}
+
+chatForm.addEventListener("submit",function(event){
+event.preventDefault();
+const text=chatInput.value.trim();
+if(!text)return;
+addMessage(text,"user");
+chatInput.value="";
+setTimeout(function(){
+addMessage(getReply(text),"bot");
+},450);
+});
+</script>
 </body>
-</html>
+  </html>
