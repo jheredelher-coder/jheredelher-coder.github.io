@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JHEREMYAS</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: #f5f7ff;
+    }
+    header {
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111a31;
+      border-bottom: 1px solid #293654;
+    }
+    .logo { font-size: 1.35rem; font-weight: 800; letter-spacing: 2px; }
+    nav a { color: #cbd5e1; text-decoration: none; margin-left: 18px; }
+    .hero {
+      min-height: 65vh;
+      padding: 90px 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: radial-gradient(circle at top right, #273c78, transparent 45%);
+    }
+    .tag { color: #8fb4ff; font-weight: bold; letter-spacing: 3px; }
+    h1 { font-size: clamp(2.8rem, 8vw, 5.5rem); margin: 15px 0; }
+    .hero p { max-width: 620px; color: #cbd5e1; font-size: 1.15rem; line-height: 1.7; }
+    .button {
+      display: inline-block; width: fit-content; margin-top: 20px;
+      padding: 13px 22px; border-radius: 10px;
+      background: #5b8cff; color: white; text-decoration: none; font-weight: bold;
+    }
+    section { padding: 55px 8%; }
+    h2 { font-size: 2rem; margin-top: 0; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+    .card { background: #151f38; border: 1px solid #293654; padding: 22px; border-radius: 15px; }
+    .card p { color: #cbd5e1; line-height: 1.6; }
+    footer { padding: 25px 8%; text-align: center; color: #9aa8c2; border-top: 1px solid #293654; }
+    @media (max-width: 560px) {
+      header { align-items: flex-start; gap: 12px; flex-direction: column; }
+      nav a { margin: 0 12px 0 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">JHEREMYAS</div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre">Sobre mí</a>
+      <a href="#contenido">Contenido</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="tag">BIENVENIDO A MI PÁGINA</div>
+      <h1>Hola, soy Jheremyas.</h1>
+      <p>Este es mi espacio en Internet. Aquí podré compartir mis ideas, imágenes, videos y proyectos.</p>
+      <a class="button" href="#contenido">Explorar</a>
+    </section>
+
+    <section id="sobre">
+      <h2>Sobre esta página</h2>
+      <p>Esta página está empezando. Poco a poco iré agregando contenido y cambiando el diseño.</p>
+    </section>
+
+    <section id="contenido">
+      <h2>Mi contenido</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Mis imágenes</h3>
+          <p>Aquí podrás colocar tus fotografías e imágenes favoritas.</p>
+        </article>
+        <article class="card">
+          <h3>Mis videos</h3>
+          <p>Aquí podrás compartir videos y mostrar tus proyectos.</p>
+        </article>
+        <article class="card">
+          <h3>Mis proyectos</h3>
+          <p>Un espacio para presentar las cosas que vayas creando.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 JHEREMYAS · Mi página web</footer>
+</body>
+</html>
